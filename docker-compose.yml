@@ -1,0 +1,21 @@
+version: "3"
+
+services:
+  ets2-server:
+    image: test
+    container_name: ets2-server
+    restart: unless-stopped
+    tty: true
+    network_mode: host
+    volumes:
+      - "./data:/app"
+      - "./save-data:/home/steam/.local/share/Euro Truck Simulator 2"  
+    environment:
+      ETS_SERVER_UPDATE_ON_START: true
+      ETS_SERVER_NAME: "My Server name"
+      ETS_SERVER_DESCRIPTION: "My server description"
+      ETS_SERVER_WELCOME_MESSAGE: "Welcome to my server!"
+      ETS_SERVER_PASSWORD: passw0rd
+      ETS_SERVER_MAX_PLAYERS: 8
+      ETS_SERVER_LOGON_TOKEN=: token
+
